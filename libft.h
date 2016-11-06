@@ -20,5 +20,7 @@
 
 void	*ft_memset(void *s, int c, size_t n);
 size_t	ft_strlen(const char *str);
+size_t	ft_strcmp(const char *s1, const char *s2);
+size_t	ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif
