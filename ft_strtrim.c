@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 13:18:35 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/07 13:28:02 by lvasseur         ###   ########.fr       */
+/*   Created: 2016/11/07 14:56:07 by lvasseur          #+#    #+#             */
+/*   Updated: 2016/11/07 15:09:40 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strtrim(const char *s)
 {
-	unsigned char		*truc;
-	size_t				i;
+	char	*str;
+	int		i;
+	int		j;
+	int		k;
 
-	truc = (unsigned char*)s;
-	while (i < n)
-		truc[i++] = (unsigned char)c;
-	return (s);
+	i = 0;
+	j = ft_strlen(s) - 1;
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+		i++;
+	while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t')
+		j--;
+	if ((str = (char*)malloc(sizeof(char) * (j - i + 1))) == 0)
+		return (NULL);
+	k = 0;
+	while (i < j + 1)
+	{
+		str[k] = s[i];
+		i++;
+		k++;
+	}
+	str[k] = '\0';
+	return (str);
 }
