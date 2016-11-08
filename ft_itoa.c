@@ -1,28 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 14:24:18 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/08 15:26:52 by lvasseur         ###   ########.fr       */
+/*   Created: 2016/11/08 14:35:03 by lvasseur          #+#    #+#             */
+/*   Updated: 2016/11/08 16:46:45 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f) (char))
+int		ft_nbrlen(int n)
 {
-	int		i;
+	int		len;
+
+	len = 1;
+	if (n < 0)
+	{
+		n = -n;
+		len++;
+	}
+	while (n >= 10)
+	{
+		n = n / 10;
+		len++;
+	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
 	char	*str;
+	int		i;
+	int		h;
 
 	i = 0;
-	str = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	while (s[i])
+	if ((str = (char*)malloc(sizeof(char) * (ft_nbrlen(n) + 1))) == 0)
+		return (NULL);
+	h = ft_nbrlen(n);
+	if (n < 0)
 	{
-		str[i] = f(s[i]);
+		str[0] = '-';
+		n = -n;
 		i++;
+	}
+	str[h] = '\0';
+	while (i < h)
+	{
+		h--;
+		str[h] = ((n % 10) + 48);
+		n = n / 10;
 	}
 	return (str);
 }

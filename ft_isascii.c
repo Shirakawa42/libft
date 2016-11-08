@@ -6,13 +6,13 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:18:14 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/07 13:20:04 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/08 16:05:45 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+int		ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

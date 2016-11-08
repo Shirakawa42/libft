@@ -6,13 +6,13 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 16:51:46 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/07 13:29:00 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/08 16:21:18 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	char	*cpy;
 	size_t	i;
