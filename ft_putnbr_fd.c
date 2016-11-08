@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 13:17:48 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/08 16:49:40 by lvasseur         ###   ########.fr       */
+/*   Created: 2016/11/08 17:04:04 by lvasseur          #+#    #+#             */
+/*   Updated: 2016/11/08 17:04:32 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		nbr;
-	int		i;
-	int		isneg;
+	char	*str;
 
-	isneg = 1;
-	nbr = 0;
-	i = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
-			|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-		i++;
-	if (str[i] == '-')
-	{
-		isneg = -1;
-		i++;
-	}
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
-		nbr = nbr * 10 + ((unsigned int)str[i++] - 48);
-	return (nbr * isneg);
+	str = ft_itoa(n);
+	ft_putstr_fd(str, fd);
 }

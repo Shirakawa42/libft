@@ -6,13 +6,13 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 17:23:31 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/07 17:31:36 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/08 16:51:59 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_strlenght(const char *str, int i, char c)
+int		ft_len(const char *str, int i, char c)
 {
 	int x;
 
@@ -25,7 +25,7 @@ int		ft_strlenght(const char *str, int i, char c)
 	return (x);
 }
 
-int		ft_number_of_words(char *str, char c)
+int		ft_nb_of_wd(char *str, char c)
 {
 	int i;
 	int word;
@@ -62,8 +62,7 @@ char	**ft_strsplit(const char *s, char c)
 
 	i = 0;
 	x = 0;
-	if ((res = malloc(sizeof(char**) * (ft_number_of_words((char*)s, c) + 1))) 
-			== 0)
+	if ((res = malloc(sizeof(char**) * (ft_nb_of_wd((char*)s, c) + 1))) == 0)
 		return (0);
 	while (s[i])
 	{
@@ -72,8 +71,7 @@ char	**ft_strsplit(const char *s, char c)
 		if (s[i])
 		{
 			h = 0;
-			if ((res[x] = malloc(sizeof(char) * ft_strlenght(s, i, c) + 1)) 
-					== 0)
+			if ((res[x] = malloc(sizeof(char) * ft_len(s, i, c) + 1)) == 0)
 				return (0);
 			while (s[i] != c && s[i])
 				res[x][h++] = s[i++];
