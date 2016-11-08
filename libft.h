@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 16:13:55 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/08 16:26:04 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/08 17:09:50 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 # define LIBFT_H
 
+# include <string.h>
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdlib.h>
