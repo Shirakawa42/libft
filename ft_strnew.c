@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:58:55 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/07 14:03:32 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/09 13:21:43 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnew(size_t size)
 
 	if ((str = (char*)malloc(sizeof(char) * (size + 1))) == NULL)
 		return (NULL);
-	while (size != -1)
+	while (size != (size_t)-1)
 		str[size--] = '\0';
 	return (str);
 }
