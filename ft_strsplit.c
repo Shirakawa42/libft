@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 17:23:31 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/09 16:31:04 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/09 16:36:20 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static int		ft_nb_of_wd(char *str, char c)
 	return (nbwords);
 }
 
-char	**ft_strsplit(const char *s, char c)
+char			**ft_strsplit(const char *s, char c)
 {
 	char	**res;
 	int		i;
