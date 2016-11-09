@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 14:35:03 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/08 16:46:45 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/09 15:50:24 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ char	*ft_itoa(int n)
 	int		h;
 
 	i = 0;
+	if (n == -2147483648)
+		return ("-2147483648");
 	if ((str = (char*)malloc(sizeof(char) * (ft_nbrlen(n) + 1))) == 0)
 		return (NULL);
 	h = ft_nbrlen(n);

@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 16:51:46 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/08 16:21:18 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/09 14:37:37 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ char	*ft_strdup(const char *src)
 	size_t	i;
 
 	i = 0;
-	cpy = (char*)malloc(sizeof(char) * ft_strlen(src) + 1);
+	if ((cpy = (char*)malloc(sizeof(char) * ft_strlen(src) + 1)) == 0)
+		return (NULL);
 	while (src[i])
 	{
 		cpy[i] = src[i];

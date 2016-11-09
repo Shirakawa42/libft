@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:24:57 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/04 15:04:16 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/09 14:53:52 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t		ft_strcmp(const char *s1, const char *s2)
 	size_t		i;
 
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] && s2[i])
+	while ((unsigned char)s1[i] == (unsigned char)s2[i] && s1[i] && s2[i])
 		i++;
 	return (s1[i] - s2[i]);
 }

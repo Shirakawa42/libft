@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:19:25 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/08 16:25:54 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/09 14:52:17 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strstr(const char *meule, const char *aiguille)
 	char	*s1;
 	char	*s2;
 
+	if (!*meule || !*aiguille)
+		return (NULL);
 	while (*meule)
 	{
 		if (*meule == *aiguille)

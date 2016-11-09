@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:19:31 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/07 13:19:36 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/09 14:56:34 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int		ft_toupper(int c)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	return (c);
+	if ((unsigned int)c >= 65 && (unsigned int)c <= 90)
+		return ((unsigned int)c + 32);
+	else
+		return (c);
 }
