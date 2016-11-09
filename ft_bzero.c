@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:17:58 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/09 16:35:31 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/09 16:39:52 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_bzero(void *s, size_t n)
 		return ;
 	i = 0;
 	u = (char*)s;
-	while (n - 1 > i)
+	while (n > i)
 	{
 		u[n - 1] = '\0';
 		n--;

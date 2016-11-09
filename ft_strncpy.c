@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 13:19:13 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/09 14:38:35 by lvasseur         ###   ########.fr       */
+/*   Created: 2016/11/09 17:16:34 by lvasseur          #+#    #+#             */
+/*   Updated: 2016/11/09 17:19:23 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	size_t		i;
+	size_t	i;
 
 	i = 0;
-	while (src[i] && i < n - 1)
+	while (src[i] && i < n)
 	{
 		dest[i] = src[i];
 		i++;
