@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:19:16 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/09 14:51:42 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/10 12:58:59 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strnstr(const char *meule, const char *aiguille, size_t n)
 	size_t	i;
 
 	i = 0;
+	if (!*meule && !*aiguille)
+		return ((char*)meule);
 	while (*meule && i < n && *aiguille)
 	{
 		if (*meule == *aiguille)
@@ -37,5 +39,7 @@ char	*ft_strnstr(const char *meule, const char *aiguille, size_t n)
 		meule++;
 		i++;
 	}
+	if (!*aiguille)
+		return ((char*)meule);
 	return (NULL);
 }

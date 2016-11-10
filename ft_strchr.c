@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:18:50 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/09 15:52:17 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/10 12:36:14 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return (t);
 		t++;
 	}
+	if (c == '\0')
+		return (t);
 	return (NULL);
 }
