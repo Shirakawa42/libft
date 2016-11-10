@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 13:19:07 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/07 17:03:12 by lvasseur         ###   ########.fr       */
+/*   Created: 2016/11/10 13:21:31 by lvasseur          #+#    #+#             */
+/*   Updated: 2016/11/10 17:45:11 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,19 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
-	size_t		i;
-	size_t		j;
-	size_t		destmax;
+	size_t	i;
+	size_t	j;
 
 	j = 0;
-	while (dest[j] && j < n)
+	i = 0;
+	while (j < n && dest[j])
 		j++;
-	destmax = j;
-	j = 0;
-	i = ft_strlen(dest);
-	while (src[j] && j < n)
+	while (j + i < n - 1 && src[i])
 	{
-		dest[i + j] = src[j];
-		j++;
+		dest[j + i] = src[j];
+		i++;
 	}
-	if (destmax < n)
-		dest[i + j] = '\0';
-	return (destmax + ft_strlen(src));
+	if (j != n)
+		dest[j + i] = '\0';
+	return (j + ft_strlen(src));
 }

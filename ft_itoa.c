@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 14:35:03 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/09 16:35:48 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/10 13:14:57 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,26 @@ static int		ft_nbrlen(int n)
 	return (len);
 }
 
+static char		*ft_min_int(void)
+{
+	char	*theint;
+
+	theint = (char*)malloc(sizeof(char) * 12);
+	theint[0] = '-';
+	theint[1] = '2';
+	theint[2] = '1';
+	theint[3] = '4';
+	theint[4] = '7';
+	theint[5] = '4';
+	theint[6] = '8';
+	theint[7] = '3';
+	theint[8] = '6';
+	theint[9] = '4';
+	theint[10] = '8';
+	theint[11] = '\0';
+	return (theint);
+}
+
 char			*ft_itoa(int n)
 {
 	char	*str;
@@ -38,7 +58,7 @@ char			*ft_itoa(int n)
 
 	i = 0;
 	if (n == -2147483648)
-		return ("-2147483648");
+		return (ft_min_int());
 	if ((str = (char*)malloc(sizeof(char) * (ft_nbrlen(n) + 1))) == 0)
 		return (NULL);
 	h = ft_nbrlen(n);

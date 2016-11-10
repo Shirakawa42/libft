@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:19:28 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/09 14:57:12 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/10 15:03:17 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_tolower(int c)
 {
-	if ((unsigned int)c >= 97 && (unsigned int)c <= 122)
-		return ((unsigned int)c - 32);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
 	return (c);
 }
