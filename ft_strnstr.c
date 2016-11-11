@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:19:16 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/10 12:58:59 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/11 13:40:26 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,8 @@ char	*ft_strnstr(const char *meule, const char *aiguille, size_t n)
 		{
 			s1 = (char*)meule;
 			s2 = (char*)aiguille;
-			while (*s1 && *s2 && *s1 == *s2 && i < n)
-			{
+			while (*s1 && *s2++ && *s1 == *s2 && i++ < n)
 				s1++;
-				s2++;
-				i++;
-			}
 			if (*s2 == '\0')
 				return ((char*)meule);
 		}

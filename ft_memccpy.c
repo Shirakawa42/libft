@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 16:56:29 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/10 15:50:07 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/11 15:44:40 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,18 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 
 	s1 = (unsigned char*)src;
 	s2 = (unsigned char*)dest;
-	while (n != 0 && *s1 != c)
+	while (n > 0)
 	{
 		*s2 = *s1;
 		s1++;
 		s2++;
 		n--;
 		dest++;
+		if (*s1 == c)
+		{
+			dest++;
+			return (dest);
+		}
 	}
-	if (*s1 != c)
-		return (NULL);
-	dest++;
-	return (dest);
+	return (NULL);
 }
