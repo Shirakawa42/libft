@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 13:21:31 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/10 17:45:11 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/13 14:39:27 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 		j++;
 	while (j + i < n - 1 && src[i])
 	{
-		dest[j + i] = src[j];
+		dest[j + i] = src[i];
 		i++;
 	}
 	if (j != n)
