@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 16:56:29 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/11 15:44:40 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/14 15:03:10 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 		dest++;
 		if (*s1 == c)
 		{
+			*s2 = *s1;
 			dest++;
 			return (dest);
 		}
