@@ -6,10 +6,11 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 17:23:31 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/09 16:36:20 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/15 14:21:32 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 static int		ft_len(const char *str, int i, char c)
