@@ -6,16 +6,30 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 16:26:24 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/08 16:47:40 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/16 17:27:03 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 void	ft_putnbr(int n)
 {
-	char	*str;
-
-	str = ft_itoa(n);
-	ft_putstr(str);
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
+	else
+		ft_putchar(n + 48);
 }
