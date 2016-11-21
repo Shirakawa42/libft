@@ -6,12 +6,15 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 14:13:52 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/07 14:23:48 by lvasseur         ###   ########.fr       */
+/*   Updated: 2016/11/21 12:19:12 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striter(char *s, void (*f) (char *))
 {
-	while (*s)
-		f(s++);
+	if (s && f)
+	{
+		while (*s)
+			f(s++);
+	}
 }
