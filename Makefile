@@ -6,7 +6,7 @@
 #    By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/09 12:30:22 by lvasseur          #+#    #+#              #
-#    Updated: 2017/02/02 12:08:11 by lvasseur         ###   ########.fr        #
+#    Updated: 2017/02/23 20:27:55 by lvasseur         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,18 +24,20 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 	ft_strtrim.c ft_strsplit.c \
 	ft_itoa.c get_next_line.c \
 	ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c ft_putchar_fd.c \
-	ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+	ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putenbr.c \
 
 all: $(NAME)
 
 $(NAME): 
-	gcc -c -Wall -Wextra -Werror $(SRC)
-	ar rc $(NAME) $(SRC:.c=.o)
+	@gcc -c -Wall -Wextra -Werror $(SRC)
+	@ar rc $(NAME) $(SRC:.c=.o)
 
 clean:
-	rm -f $(SRC:.c=.o)
+	@rm -f $(SRC:.c=.o)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
+
+good: all clean

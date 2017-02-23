@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_putenbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 12:57:25 by lvasseur          #+#    #+#             */
-/*   Updated: 2017/02/23 20:15:22 by lvasseur         ###   ########.fr       */
+/*   Created: 2017/02/23 20:12:52 by lvasseur          #+#    #+#             */
+/*   Updated: 2017/02/23 20:18:59 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+void	ft_putenbr(int n)
 {
-	void	*mem;
-	char	*mem2;
-
-	if ((mem = (void*)malloc(sizeof(void) * size)) == NULL)
-		return (NULL);
-	mem2 = (char*)mem;
-	size = size - 1;
-	while (size != (size_t)-1)
-		mem2[size--] = 0;
-	return (mem);
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putenbr(n / 10);
+		ft_putenbr(n % 10);
+	}
+	else
+		ft_putchar(n + 48);
+	ft_putchar('\n');
 }
