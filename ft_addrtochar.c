@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 13:23:39 by lvasseur          #+#    #+#             */
-/*   Updated: 2018/05/24 13:38:29 by lvasseur         ###   ########.fr       */
+/*   Updated: 2018/05/24 13:43:06 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,20 @@ char	*ft_addrtochar(uint64_t addr)
 	}
 	str[16] = '\0';
 	i = 15;
-	while (addr >= 10)
+	while (addr >= 16)
 	{
 		tmp = addr % 16;
 		if (tmp >= 10)
 			str[i] = 'a' + tmp - 10;
 		else
 			str[i] = '0' + tmp;
-		addr /= 10;
+		addr /= 16;
 		i--;
 	}
+	tmp = addr % 16;
+	if (tmp >= 10)
+		str[i] = 'a' + tmp - 10;
+	else
+		str[i] = '0' + tmp;
 	return (str);
 }
