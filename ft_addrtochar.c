@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 13:23:39 by lvasseur          #+#    #+#             */
-/*   Updated: 2018/05/24 13:55:32 by lvasseur         ###   ########.fr       */
+/*   Updated: 2018/05/24 13:57:11 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_addrtochar(uint64_t addr)
 	uint64_t	tmp;
 
 	if (addr == 0)
-		return ("0               ");
+		return ("                ");
 	str = (char*)malloc(sizeof(char) * 17);
 	i = 0;
 	while (i < 16)
