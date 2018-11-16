@@ -78,6 +78,7 @@ void				ft_putenbr(int n);
 char				*ft_addrtochar(uint64_t addr);
 char				**ft_sorttab(char **tab);
 void				ft_sorttabfollow(char ***tab, char ***follower, int nbstrings);
+float				ft_atof(char *str);
 
 typedef struct		s_list
 {
