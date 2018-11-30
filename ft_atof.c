@@ -6,14 +6,16 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:17:48 by lvasseur          #+#    #+#             */
-/*   Updated: 2018/11/30 16:34:45 by lvasseur         ###   ########.fr       */
+/*   Updated: 2018/11/30 16:36:07 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static float	ft_atof2(const char *str, int i, float j, float nbr)
+static float	ft_atof2(const char *str, int i, float nbr)
 {
+	float		j;
+
 	if (str[i] && str[i] == '.')
 	{
 		i++;
@@ -34,7 +36,6 @@ float			ft_atof(const char *str)
 	float		nbr;
 	int			i;
 	float		isneg;
-	float		j;
 
 	isneg = 1;
 	nbr = 0;
@@ -50,6 +51,6 @@ float			ft_atof(const char *str)
 	}
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 		nbr = nbr * 10 + ((unsigned int)str[i++] - 48);
-	nbr = ft_atof2(str, i, j, nbr);
+	nbr = ft_atof2(str, i, nbr);
 	return (nbr * isneg);
 }
