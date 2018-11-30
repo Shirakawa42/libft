@@ -6,13 +6,30 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:17:48 by lvasseur          #+#    #+#             */
-/*   Updated: 2016/11/14 16:59:08 by lvasseur         ###   ########.fr       */
+/*   Updated: 2018/11/30 16:34:45 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-float		ft_atof(const char *str)
+static float	ft_atof2(const char *str, int i, float j, float nbr)
+{
+	if (str[i] && str[i] == '.')
+	{
+		i++;
+		j = 10;
+		while (str[i] && str[i] >= '0' && str[i] <= '9')
+		{
+			nbr += (float)((unsigned int)str[i++] - 48) / j;
+			j *= 10;
+			if (j >= 1000000000)
+				break ;
+		}
+	}
+	return (nbr);
+}
+
+float			ft_atof(const char *str)
 {
 	float		nbr;
 	int			i;
@@ -33,17 +50,6 @@ float		ft_atof(const char *str)
 	}
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 		nbr = nbr * 10 + ((unsigned int)str[i++] - 48);
-	if (str[i] && str[i] == '.')
-	{
-		i++;
-		j = 10;
-		while (str[i] && str[i] >= '0' && str[i] <= '9')
-		{
-			nbr += (float)((unsigned int)str[i++] - 48) / j;
-			j *= 10;
-			if (j >= 1000000000)
-				break ;
-		}
-	}
+	nbr = ft_atof2(str, i, j, nbr);
 	return (nbr * isneg);
 }
