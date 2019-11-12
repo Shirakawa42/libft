@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 16:13:55 by lvasseur          #+#    #+#             */
-/*   Updated: 2019/06/20 16:51:18 by lvasseur         ###   ########.fr       */
+/*   Updated: 2019/11/12 15:56:29 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void				ft_sorttabfollow(char ***tab, char ***follower,
 		int nbstrings);
 float				ft_atof(const char *str);
 double				racine(double query);
+char				*ft_addrtochar(uint64_t addr);
 
 typedef struct		s_list
 {
