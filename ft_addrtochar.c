@@ -6,13 +6,26 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 15:55:44 by lvasseur          #+#    #+#             */
-/*   Updated: 2019/11/12 15:55:54 by lvasseur         ###   ########.fr       */
+/*   Updated: 2019/11/13 16:58:36 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_addrtochar(uint64_t addr)
+static char	*init_str(void)
+{
+	char	*str;
+	int		i;
+
+	str = (char*)malloc(sizeof(char) * 17);
+	i = 0;
+	while (i < 16)
+		str[i++] = '0';
+	str[16] = '\0';
+	return (str);
+}
+
+char		*ft_addrtochar(uint64_t addr)
 {
 	char		*str;
 	int			i;
@@ -20,14 +33,7 @@ char	*ft_addrtochar(uint64_t addr)
 
 	if (addr == 0)
 		return ("                ");
-	str = (char*)malloc(sizeof(char) * 17);
-	i = 0;
-	while (i < 16)
-	{
-		str[i] = '0';
-		i++;
-	}
-	str[16] = '\0';
+	str = init_str();
 	i = 15;
 	while (addr >= 16)
 	{
