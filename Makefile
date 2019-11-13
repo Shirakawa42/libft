@@ -6,7 +6,7 @@
 #    By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/09 12:30:22 by lvasseur          #+#    #+#              #
-#    Updated: 2019/11/13 16:54:14 by lvasseur         ###   ########.fr        #
+#    Updated: 2019/11/13 17:36:00 by lvasseur         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 	ft_itoa.c get_next_line.c \
 	ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c ft_putchar_fd.c \
 	ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putenbr.c \
-	ft_sorttab.c ft_sorttabfollow.c ft_atof.c racine.c ft_addrtochar.c ft_order_tab_by_ascii.c
+	ft_sorttab.c ft_sorttabfollow.c ft_atof.c racine.c ft_addrtochar.c ft_order_tab_by_ascii.c \
+	ft_order_tab_by_ascii_two_follow.c
 
 all: $(NAME)
 
