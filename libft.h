@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 16:13:55 by lvasseur          #+#    #+#             */
-/*   Updated: 2019/11/13 16:53:53 by lvasseur         ###   ########.fr       */
+/*   Updated: 2019/11/13 17:33:16 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,13 @@ int					get_next_line(const int fd, char **line);
 void				ft_putenbr(int n);
 char				**ft_sorttab(char **tab);
 void				ft_sorttabfollow(char ***tab, char ***follower,
-		int nbstrings);
+							int nbstrings);
 float				ft_atof(const char *str);
 double				racine(double query);
 char				*ft_addrtochar(uint64_t addr);
 char				**ft_order_tab_by_ascii(char **tab, int nbstr);
+char				**ft_order_tab_by_ascii_two_follow(char **tab,
+							int nbstr, char **tabb, char **tabc);
 
 typedef struct		s_list
 {
