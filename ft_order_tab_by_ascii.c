@@ -6,13 +6,13 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 16:00:30 by lvasseur          #+#    #+#             */
-/*   Updated: 2019/11/13 16:53:39 by lvasseur         ###   ########.fr       */
+/*   Updated: 2019/11/13 17:41:47 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_order_tab_by_ascii(char **tab, int nbstr)
+void	ft_order_tab_by_ascii(char ***tab, int nbstr)
 {
 	int		i;
 	int		j;
@@ -28,14 +28,13 @@ char	**ft_order_tab_by_ascii(char **tab, int nbstr)
 		j = current_start - 1;
 		t = current_start;
 		while (++j < nbstr)
-			if (t != j && ft_strcmp(tab[t], tab[j]))
+			if (t != j && ft_strcmp(*tab[t], *tab[j]))
 				t = j;
-		tmp = ft_strdup(tab[t]);
-		free(tab[t]);
-		tab[t] = tab[i];
-		tab[i] = tmp;
+		tmp = ft_strdup(*tab[t]);
+		free(*tab[t]);
+		*tab[t] = *tab[i];
+		*tab[i] = tmp;
 		current_start++;
 		i++;
 	}
-	return (tab);
 }
