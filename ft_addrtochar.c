@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 15:55:44 by lvasseur          #+#    #+#             */
-/*   Updated: 2019/11/13 16:58:36 by lvasseur         ###   ########.fr       */
+/*   Updated: 2019/11/13 17:54:56 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char		*ft_addrtochar(uint64_t addr)
 	uint64_t	tmp;
 
 	if (addr == 0)
-		return ("                ");
+		return (ft_strdup(ft_strdup("                ")));
 	str = init_str();
 	i = 15;
 	while (addr >= 16)
