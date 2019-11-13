@@ -6,7 +6,7 @@
 /*   By: lvasseur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 18:03:51 by lvasseur          #+#    #+#             */
-/*   Updated: 2019/11/13 18:04:20 by lvasseur         ###   ########.fr       */
+/*   Updated: 2019/11/13 18:08:39 by lvasseur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void	ft_sorttabtwofollow(char ***tab, char ***follower,
 			tmp = tabb[i];
 			tabb[i] = tabb[i - 1];
 			tabb[i - 1] = tmp;
-			tmp = tabb[i];
-			tabb[i] = tabb[i - 1];
-			tabb[i - 1] = tmp;
+			tmp = tabc[i];
+			tabc[i] = tabc[i - 1];
+			tabc[i - 1] = tmp;
 			i = 0;
 		}
 }
